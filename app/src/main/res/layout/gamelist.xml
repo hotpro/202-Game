@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Project: Asqare
+ * Copyright (C) 2008-2012 rdrr.labs@gmail.com,
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="@dimen/item_margin"
+    android:layout_marginRight="@dimen/item_margin"
+    android:layout_weight="1"
+    >
+
+    <com.alfray.asqare.view.AsqareView
+        android:id="@+id/surface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <ListView
+        android:id="@+id/gamelist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#A000"
+	    android:nextFocusDown="@id/new_game"
+	    android:cacheColorHint="#0000"
+        />
+
+</FrameLayout>
+
+<!-- id/new_game is declared in values/ids.xml, since it is referenced
+     above in ListView.nextFocusDown -->
+<Button
+    android:id="@id/new_game"
+    android:text="New Game"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0"
+    android:layout_marginTop="@dimen/item_margin"
+    android:nextFocusUp="@id/gamelist"
+    />
+
+</LinearLayout>
+
