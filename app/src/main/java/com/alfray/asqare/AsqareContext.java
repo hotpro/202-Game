@@ -164,7 +164,6 @@ public class AsqareContext {
     	}
 
 		mGameplay.create(state);
-        
         mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
