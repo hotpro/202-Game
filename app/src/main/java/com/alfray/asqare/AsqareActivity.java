@@ -110,6 +110,7 @@ public class AsqareActivity extends Activity {
         	String state = inState.getString("asqare.state");
         	mContext.createGameplay(clazz_name, state);
         }
+
 	}
 
     /**

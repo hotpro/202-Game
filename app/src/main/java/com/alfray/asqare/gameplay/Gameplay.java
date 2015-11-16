@@ -31,13 +31,19 @@ import com.alfray.asqare.engine.Board.Cell;
 import com.alfray.asqare.prefs.PrefsValues;
 import com.alfray.asqare.view.IUiEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //-----------------------------------------------
 
-public abstract class Gameplay implements IUiEventListener {
+public abstract class Gameplay implements IUiEventListener, Subject {
 
 	private Board<? extends Cell> mBoard;
 	private Point mTempPoint = new Point();
 	private final AsqareContext mContext;
+
+    protected int mMoves;
+    protected int mScore;
 
 	public Gameplay(AsqareContext context) {
 		mContext = context;
@@ -276,6 +282,31 @@ public abstract class Gameplay implements IUiEventListener {
 	protected void onActivate() {
     	// pass
 	}
+
+
+	// observer pattern start
+
+	private List<Observer> observers = new ArrayList<>();
+	@Override
+	public void register(Observer observer) {
+		observers.add(observer);
+	}
+
+	@Override
+	public void unregister(Observer observer) {
+		observers.remove(observer);
+	}
+
+	@Override
+	public void notifyObserver() {
+		for (Observer o : observers) {
+			o.update(mMoves, mScore);
+		}
+	}
+
+    protected void updateMessage() {
+        notifyObserver();
+    }
 }
 
 

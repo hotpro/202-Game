@@ -77,8 +77,6 @@ public class Bijoux extends Gameplay {
 	private Random mRandom;
 	private Cell mFirstCell;
 	private Cell mSecondCell;
-	private int mMoves;
-	private int mScore;
 	private int[] mTempStack;
 	private long mFillChanged;
 	private boolean mApplyMovePenalty;
@@ -417,11 +415,13 @@ public class Bijoux extends Gameplay {
 		mAnimThread.queueGameplayEvent(this, mSetupEvent);
 	}
 
-	private void updateMessage() {
-		String msg = String.format("Bijoux - Moves: %d, Score: %d, Ratio: %.2f",
-				mMoves, mScore, (float)mScore / (float)mMoves);
-		getContext().setStatus(msg);
-	}
+//    @Override
+//	protected void updateMessage() {
+//        super.updateMessage();
+//		String msg = String.format("Bijoux - Moves: %d, Score: %d, Ratio: %.2f",
+//				mMoves, mScore, (float)mScore / (float)mMoves);
+//		getContext().setStatus(msg);
+//	}
 
 	//-----------------
 

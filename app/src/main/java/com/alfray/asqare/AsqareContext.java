@@ -31,6 +31,7 @@ import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.CellRegion;
 import com.alfray.asqare.engine.Board.Cell;
 import com.alfray.asqare.gameplay.Gameplay;
+import com.alfray.asqare.gameplay.Observer;
 import com.alfray.asqare.prefs.PrefsValues;
 import com.alfray.asqare.view.AsqareView;
 
@@ -163,8 +164,20 @@ public class AsqareContext {
     	}
 
 		mGameplay.create(state);
+        mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
+
+    private Observer scoreObserver = new Observer() {
+        @Override
+        public void update(int mMoves, int mScore) {
+            String msg = String.format("Moves: %d, Score: %d, Ratio: %.2f",
+                    mMoves, mScore, (float)mScore / (float)mMoves);
+            if (mActivity != null) {
+                mActivity.setStatus(msg);
+            }
+        }
+    };
 
 	public Gameplay instantiateGameplay(Class<? extends Gameplay> clazz) {
 		try {
