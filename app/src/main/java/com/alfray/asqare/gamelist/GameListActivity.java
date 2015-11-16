@@ -48,6 +48,7 @@ import com.alfray.asqare.R;
 import com.alfray.asqare.gameplay.AvailableGameplays;
 import com.alfray.asqare.gameplay.Gameplay;
 import com.alfray.asqare.gameplay.Title;
+import com.alfray.asqare.log.MyLogger;
 
 //-----------------------------------------------
 
@@ -74,6 +75,7 @@ public class GameListActivity extends AsqareActivity {
 	@Override
 	public void onCreate(Bundle inState) {
     	Log.v(TAG, "onCreate " + (inState == null ? "no" : " with") + " state");
+        MyLogger.instance().d("onCreate " + (inState == null ? "no" : " with") + " state");
 	    super.onCreate(inState);
 
 	    Cursor c = managedQuery(
