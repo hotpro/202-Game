@@ -44,6 +44,7 @@ public abstract class Gameplay implements IUiEventListener, Subject {
 
     protected int mMoves;
     protected int mScore;
+    protected ScoreCalculator scoreCalculator;
 
 	public Gameplay(AsqareContext context) {
 		mContext = context;

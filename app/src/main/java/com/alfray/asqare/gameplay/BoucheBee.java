@@ -490,9 +490,11 @@ public class BoucheBee extends Gameplay {
 
 		if (num_changed != 0) {
 			// increase score
-			for(; num_changed > 0; num_changed--) {
-				mScore += num_changed;
-			}
+//			for(; num_changed > 0; num_changed--) {
+//				mScore += num_changed;
+//			}
+            scoreCalculator = new BoucheBeeCalculation();
+            mScore = scoreCalculator.scoreCalculation(mScore, num_changed);
 			mMoves++;
 
 			updateMessage();

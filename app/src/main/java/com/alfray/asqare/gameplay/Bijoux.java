@@ -719,10 +719,14 @@ public class Bijoux extends Gameplay {
 
 		if (changed != 0) {
 			// increase score
+            scoreCalculator = new BijouxCalculation();
 			int count = 0;
 			long temp = changed;
 			while (temp != 0) {
-				if ((temp & 1) != 0) mScore += ++count;
+				if ((temp & 1) != 0) {
+//                    mScore += ++count;
+                    mScore = scoreCalculator.scoreCalculation(mScore,++count);
+                }
 				temp = temp >> 1;
 			}
 			updateMessage();
@@ -732,8 +736,10 @@ public class Bijoux extends Gameplay {
 			if (mUseAnims) mAnimThread.queueDelayFor(250 /* ms */);
 			mAnimThread.queueGameplayEvent(this, EVENT_FILL);
 		} else {
+            scoreCalculator = new PenaltyCalculation();
 			if (mApplyMovePenalty) {
-				mScore -= (mScore * MOVE_PENALTY) / 100;
+//				mScore -= (mScore * MOVE_PENALTY) / 100;
+                mScore = scoreCalculator.scoreCalculation(mScore, MOVE_PENALTY);
 				updateMessage();
 			}
 			mAnimThread.queueGameplayEvent(this, EVENT_DONE);
