@@ -19,13 +19,19 @@
 package com.alfray.asqare;
 
 import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Point;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.alfray.asqare.component_i.ScoreBpOsv;
+import com.alfray.asqare.component_i.timer;
 import com.alfray.asqare.engine.AnimThread;
 import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.CellRegion;
@@ -46,6 +52,10 @@ public class AsqareContext {
 	private final AsqareActivity mActivity;
 	private AnimThread mAnimThread;
 	private PrefsValues mPrefsValues = new PrefsValues();
+	//**ivan s
+	public Handler timer = new Handler();
+	private ScoreBpOsv bonusObserver;
+	//**ivan e
 
 	public AsqareContext(AsqareActivity activity) {
 		mActivity = activity;
@@ -163,10 +173,16 @@ public class AsqareContext {
 			mGameplay = instantiateGameplay(clazz);
     	}
 
+		//**ivan s
+		bonusObserver = new ScoreBpOsv(timer, mActivity.getContext());
+		mGameplay.register(bonusObserver);
+		//**ivan e
 		mGameplay.create(state);
         mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
+
+
 
     // Concrete Observer starts Yunlong Xu
 
@@ -193,6 +209,57 @@ public class AsqareContext {
 			throw new RuntimeException(e);
 		}
 	}
+
+
+	//***ivan s
+	public void refreshWindowTitle(String timer_txt) {
+		if (mActivity != null && mGameplay != null) {
+			String title = mGameplay.getName()+timer_txt;
+			if (title != null) mActivity.setTitle(title);
+		}
+	}
+
+
+	public int showbonuspanel() {
+
+		mAnimThread.pauseThread(true);
+
+		ArrayList<AlertDialog.Builder> mTempDialogList = new ArrayList<AlertDialog.Builder>();
+		AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
+		mTempDialogList.add(d);
+		final int index = mTempDialogList.indexOf(d);
+
+		d.setCancelable(true);
+		d.setTitle(R.string.bonus_time);
+		d.setIcon(R.drawable.flowers_orange);
+
+		int reply;
+		String[] items = new String[]{"A. Double point in 10sec","B. pending....."};
+
+		d.setItems(items, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int whichButton) {
+
+				if (whichButton == 0) {
+					System.out.println("alert dialog response: "+whichButton);
+					mAnimThread.pauseThread(false);
+					timer countdown = new timer(timer, mActivity.getContext());
+					Thread timethread = new Thread(countdown, "countdown_thread");
+					timethread.start();
+
+				}
+			}
+
+		});
+
+		d.show();
+		return 0;
+
+	}
+
+
+
+	//**ivan e
 
 	/**
 	 * Creates a gameplay for this class name (FQCN) but does not start it.

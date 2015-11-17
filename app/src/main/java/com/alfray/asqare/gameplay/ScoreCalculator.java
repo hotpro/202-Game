@@ -1,5 +1,7 @@
 package com.alfray.asqare.gameplay;
 
+import com.alfray.asqare.component_i.timer;
+
 /**
  * Created by yunlongxu on 11/16/15. Strategy Pattern
  */
@@ -11,7 +13,12 @@ class BijouxCalculation implements ScoreCalculator {
 
     @Override
     public int scoreCalculation(int mScore, int temp) {
+       //**ivan s
+        if(timer.current_cnt>0)
+            temp=temp*2;
+        //**ivan e
         mScore += temp;
+
         return mScore;
     }
 }
