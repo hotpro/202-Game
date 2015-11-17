@@ -285,7 +285,7 @@ public abstract class Gameplay implements IUiEventListener, Subject {
 	}
 
 
-	// observer pattern start
+	// observer pattern start Yunlong Concrete Subject
 
 	private List<Observer> observers = new ArrayList<>();
 	@Override

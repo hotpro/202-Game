@@ -725,6 +725,8 @@ public class Bijoux extends Gameplay {
 			while (temp != 0) {
 				if ((temp & 1) != 0) {
 //                    mScore += ++count;
+
+                    // BJ Calculation Strategy Yunlong Xu
                     mScore = scoreCalculator.scoreCalculation(mScore,++count);
                 }
 				temp = temp >> 1;
@@ -738,6 +740,8 @@ public class Bijoux extends Gameplay {
 		} else {
             scoreCalculator = new PenaltyCalculation();
 			if (mApplyMovePenalty) {
+
+                // BJ Penalty Strategy Yunlong Xu
 //				mScore -= (mScore * MOVE_PENALTY) / 100;
                 mScore = scoreCalculator.scoreCalculation(mScore, MOVE_PENALTY);
 				updateMessage();

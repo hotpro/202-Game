@@ -168,6 +168,8 @@ public class AsqareContext {
 		return mGameplay;
 	}
 
+    // Concrete Observer starts Yunlong Xu
+
     private Observer scoreObserver = new Observer() {
         @Override
         public void update(int mMoves, int mScore) {
@@ -178,6 +180,8 @@ public class AsqareContext {
             }
         }
     };
+
+    // concrete Observer ends
 
 	public Gameplay instantiateGameplay(Class<? extends Gameplay> clazz) {
 		try {

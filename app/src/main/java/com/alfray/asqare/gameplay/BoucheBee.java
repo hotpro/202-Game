@@ -493,6 +493,8 @@ public class BoucheBee extends Gameplay {
 //			for(; num_changed > 0; num_changed--) {
 //				mScore += num_changed;
 //			}
+
+            // BB calculation Strategy Yunlong Xu
             scoreCalculator = new BoucheBeeCalculation();
             mScore = scoreCalculator.scoreCalculation(mScore, num_changed);
 			mMoves++;
