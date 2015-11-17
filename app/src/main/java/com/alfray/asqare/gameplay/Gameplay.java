@@ -307,6 +307,7 @@ public abstract class Gameplay implements IUiEventListener, Subject {
 
     protected void updateMessage() {
         notifyObserver();
+
     }
 }
 
