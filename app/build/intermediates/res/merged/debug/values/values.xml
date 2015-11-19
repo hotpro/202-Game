@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/arrays.xml -->
+    <eat-comment/>
+    <string-array name="prefs_theme_names">
+    <item>Default</item>
+    <item>Flowers</item>
+    <item>Rustworn Bolt</item>
+    <item>Truckin Sign</item>
+</string-array>
+    <string-array name="prefs_theme_values">
+    <item>default</item>
+    <item>flowers</item>
+    <item>rustworn</item>
+    <item>truckin</item>
+</string-array>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="black">#000</color>
+    <color name="gray">#d7d5d5</color>
+    <color name="white">#FFF</color>
+    <color name="yellow">#FFF0</color>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="item_margin">2dp</dimen>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <drawable name="black">#000</drawable>
+    <drawable name="transp_black">#80000000</drawable>
+    <drawable name="transp_grey">#80808080</drawable>
+    <drawable name="white">#FFF</drawable>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="new_game" type="id"/>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="about">About...</string>
+    <string name="about_title">About Asqare</string>
+    <string name="app_name">Asqare</string>
+    <string name="click_to_start">Click to start.</string>
+    <string name="created_modified">"Created %1$s\nLast played %2$s"</string>
+    <string name="del_game">Delete Game...</string>
+    <string name="delete_msg">Are you sure your want to delete the %1$s game, created %2$s, last played %3$s with score %4$s?</string>
+    <string name="delete_no">No</string>
+    <string name="delete_title">Delete Game?</string>
+    <string name="delete_yes">Yes</string>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/build/intermediates/exploded-aar/asqare/keyboardWidgetTutorial/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="hello">Hello World, KeyboardWidgetTutorialActivity!</string>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="list_title">Game List</string>
+    <string name="login">Login</string>
+    <string name="login_button_txt">Login</string>
+    <string name="main_menu">Game List</string>
+    <string name="new_game">New Game...</string>
+    <string name="new_title">Create New Game?</string>
+    <string name="prefs_title">Asqare Settings</string>
+    <string name="settings">Settings...</string>
+    <string name="simple_ime">Simple IME</string>
+    <string name="subtype_en_US">English (US)</string>
+    <string name="title_bijoux">Bijoux</string>
+    <string name="title_bouchebee">Bouche Bée</string>
+    <string name="welcome">Welcome to Asqare!</string>
+    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="TextGameItem" parent="@android:style/TextAppearance.Large">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+</resources>
