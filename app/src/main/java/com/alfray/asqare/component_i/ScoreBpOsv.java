@@ -9,7 +9,8 @@ import android.os.Handler;
  */
 public class ScoreBpOsv implements Observer {
 
-    private int lst_bonus_score=0;
+
+    public static int lst_bonus_score=0;
     private Handler parenthandler;
     private AsqareContext destcontext;
     public static Integer tier=70;
@@ -35,4 +36,6 @@ public class ScoreBpOsv implements Observer {
             lst_bonus_score=mScore;
         }
     }
+
+
 }

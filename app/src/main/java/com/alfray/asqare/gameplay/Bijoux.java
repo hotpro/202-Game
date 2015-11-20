@@ -28,6 +28,8 @@ import android.util.Log;
 
 import com.alfray.asqare.AsqareContext;
 import com.alfray.asqare.R;
+import com.alfray.asqare.component_i.ConBijouxCalculation;
+import com.alfray.asqare.component_i.ConcreteScoreCalculator;
 import com.alfray.asqare.engine.AnimThread;
 import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.Color;
@@ -719,7 +721,8 @@ public class Bijoux extends Gameplay {
 
 		if (changed != 0) {
 			// increase score
-            scoreCalculator = new BijouxCalculation();
+           //***ivan scoreCalculator = new BijouxCalculation();
+			scoreCalculator = new ConBijouxCalculation(new ConcreteScoreCalculator());
 			int count = 0;
 			long temp = changed;
 			while (temp != 0) {
@@ -728,6 +731,7 @@ public class Bijoux extends Gameplay {
 
                     // BJ Calculation Strategy Yunlong Xu
                     mScore = scoreCalculator.scoreCalculation(mScore,++count);
+
                 }
 				temp = temp >> 1;
 			}

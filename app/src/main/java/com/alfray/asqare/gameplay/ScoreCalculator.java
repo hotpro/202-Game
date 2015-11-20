@@ -1,5 +1,7 @@
 package com.alfray.asqare.gameplay;
 
+import com.alfray.asqare.component_i.BpPanelCmdExpRcv;
+import com.alfray.asqare.component_i.ScoreBpOsv;
 import com.alfray.asqare.component_i.timer;
 
 /**
@@ -9,19 +11,26 @@ public interface ScoreCalculator {
     public int scoreCalculation(int mScore, int temp);
 }
 
-class BijouxCalculation implements ScoreCalculator {
-
-    @Override
-    public int scoreCalculation(int mScore, int temp) {
-       //**ivan s
-        if(timer.current_cnt>0)
-            temp=temp*2;
-        //**ivan e
-        mScore += temp;
-
-        return mScore;
-    }
-}
+//**commented by ivan, this class is separated into a class file under package component_i for decorator usage
+//
+//class BijouxCalculation implements ScoreCalculator {
+//
+//    //**ivan s
+//    private  ScoreCalculator scoreCalcomp;
+//
+//    public BijouxCalculation(ScoreCalculator com){
+//        scoreCalcomp=com;
+//    }
+//    //**ivan e
+//
+//    @Override
+//    public int scoreCalculation(int mScore, int temp) {
+//       //**ivan s  here is replaced by a decorator******
+//
+//        return scoreCalcomp.scoreCalculation(mScore,temp);
+//        //**ivan  return mScore;
+//    }
+//}
 
 class BoucheBeeCalculation implements ScoreCalculator {
 

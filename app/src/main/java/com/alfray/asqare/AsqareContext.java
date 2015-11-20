@@ -30,6 +30,11 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.alfray.asqare.component_i.BpPanelCmdExpRcv;
+import com.alfray.asqare.component_i.BpPanelCmdCdDbpRcv;
+import com.alfray.asqare.component_i.BpPanelConCmd;
+import com.alfray.asqare.component_i.BpPanelMenuItem;
+import com.alfray.asqare.component_i.BpPanelMenu;
 import com.alfray.asqare.component_i.ScoreBpOsv;
 import com.alfray.asqare.component_i.timer;
 import com.alfray.asqare.engine.AnimThread;
@@ -55,6 +60,7 @@ public class AsqareContext {
 	//**ivan s
 	public Handler timer = new Handler();
 	private ScoreBpOsv bonusObserver;
+	private BpPanelMenu bpPanelMenu;
 	//**ivan e
 
 	public AsqareContext(AsqareActivity activity) {
@@ -176,12 +182,30 @@ public class AsqareContext {
 		//**ivan s
 		bonusObserver = new ScoreBpOsv(timer, mActivity.getContext());
 		mGameplay.register(bonusObserver);
+		bpPanelMenu = new BpPanelMenu();
+
+		//*** setting menu item for "countdown double bp income"
+		BpPanelMenuItem BpCdDbP = new BpPanelMenuItem();
+		BpPanelConCmd BpCdDbpCMD = new BpPanelConCmd();
+		BpPanelCmdCdDbpRcv BpCdDbpCMDRcv = new BpPanelCmdCdDbpRcv(mAnimThread, timer, mActivity);
+		BpCdDbpCMD.setReceiver(BpCdDbpCMDRcv);
+		BpCdDbP.setCommand(BpCdDbpCMD);
+
+		//*** setting menu item for "direct extra bp increase"
+		BpPanelMenuItem BpExp = new BpPanelMenuItem();
+		BpPanelConCmd BpExpCMD = new BpPanelConCmd();
+		BpPanelCmdExpRcv BpExpCMDRcv = new BpPanelCmdExpRcv(mAnimThread, timer, mActivity);
+		BpExpCMD.setReceiver(BpExpCMDRcv);
+		BpExp.setCommand(BpExpCMD);
+
+		bpPanelMenu.addMenuItem(BpCdDbP, "0");
+		bpPanelMenu.addMenuItem(BpExp, "1");
+
 		//**ivan e
 		mGameplay.create(state);
         mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
-
 
 
     // Concrete Observer starts Yunlong Xu
@@ -240,14 +264,17 @@ public class AsqareContext {
 			@Override
 			public void onClick(DialogInterface dialog, int whichButton) {
 
-				if (whichButton == 0) {
-					System.out.println("alert dialog response: "+whichButton);
-					mAnimThread.pauseThread(false);
-					timer countdown = new timer(timer, mActivity.getContext());
-					Thread timethread = new Thread(countdown, "countdown_thread");
-					timethread.start();
+				bpPanelMenu.selectMenuItem(String.valueOf(whichButton));
 
-				}
+
+//				if (whichButton == 0) {
+//					System.out.println("alert dialog response: "+whichButton);
+//					mAnimThread.pauseThread(false);
+//					timer countdown = new timer(timer, mActivity.getContext());
+//					Thread timethread = new Thread(countdown, "countdown_thread");
+//					timethread.start();
+//
+//				}
 			}
 
 		});
