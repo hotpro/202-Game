@@ -26,10 +26,15 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.alfray.asqare.AsqareActivity;
 import com.alfray.asqare.AsqareContext;
+import com.alfray.asqare.R;
 import com.alfray.asqare.gamelist.Columns;
+import com.alfray.asqare.timer.DefaultGameCountDown;
+import com.alfray.asqare.timer.GameCountDown;
+import com.alfray.asqare.timer.GameCountDownListener;
 
 //-----------------------------------------------
 
@@ -88,7 +93,27 @@ public class GameplayActivity extends AsqareActivity {
 		        null,  // selection
                 null,  // selectionArgs
 		        null); // sortOrder
+        setupTimer();
 	}
+
+    private GameCountDown gameCountDown;
+    private TextView countDownView;
+	private void setupTimer() {
+        this.countDownView = (TextView) findViewById(R.id.count_down);
+        this.gameCountDown = new DefaultGameCountDown(10);
+        this.gameCountDown.register(new GameCountDownListener() {
+            @Override
+            public void onTick(long second) {
+                countDownView.setText(second + " s");
+            }
+
+            @Override
+            public void onFinish() {
+                finish();
+            }
+        });
+        this.gameCountDown.start();
+    }
 
 	@Override
 	protected void setupWindowAndContent() {

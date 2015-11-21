@@ -24,6 +24,16 @@
 	android:orientation="vertical"
 	>
 
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <TextView
+            android:id="@+id/count_down"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
 	<com.alfray.asqare.view.AsqareView
 		android:id="@+id/surface"
 	    android:layout_width="fill_parent"
