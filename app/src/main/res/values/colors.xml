@@ -24,4 +24,7 @@
     <drawable name="transp_grey">#80808080</drawable>
     <drawable name="transp_black">#80000000</drawable>
     <color name="yellow">#FFF0</color>
+    <color name="white">#FFF</color>
+    <color name="gray">#d7d5d5</color>
+    <color name="black">#000</color>
 </resources>

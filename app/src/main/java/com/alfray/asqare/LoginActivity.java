@@ -23,6 +23,8 @@ import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -30,17 +32,24 @@ import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alfray.asqare.gamelist.GameListActivity;
+import com.alfray.asqare.loginstates.ILoginStateMachine;
+import com.alfray.asqare.loginstates.LoginStateMachine;
+import com.alfray.asqare.loginstates.Myobserver;
 
 import it.anddev.tutorial.BasicOnKeyboardActionListener;
 import it.anddev.tutorial.CustomKeyboardView;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends Activity implements Myobserver {
 
 	@SuppressWarnings("unused")
     private static final String TAG = "LoginActivity";
+
+    private ILoginStateMachine loginStateMachine;
+//    private LinearLayout pinTextViews;
 
 
 	/** Called when the activity is first created. */
@@ -51,42 +60,28 @@ public class LoginActivity extends Activity {
 	    setContentView(R.layout.login);
 	    setTitle(R.string.login);
 
-//		KeyboardView kbdview = (KeyboardView)findViewById(R.id.passcodekbd);
-//		TextView passcodeview = (TextView)findViewById(R.id.passcode);
-//        passcodeview.setText("Passcode Shown Here");
-        Button loginBtn = (Button)findViewById(R.id.login_button);
-        loginBtn.setText("Press to login");
-        loginBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, GameListActivity.class);
 
-
-                startActivity(intent);
-            }
-        });
+        TextView pinView1 = (TextView)findViewById(R.id.textView1);
+        TextView pinView2 = (TextView)findViewById(R.id.textView2);
+        TextView pinView3 = (TextView)findViewById(R.id.textView3);
+        TextView pinView4 = (TextView)findViewById(R.id.textView4);
+        loginStateMachine = new LoginStateMachine(pinView1,pinView2,pinView3,pinView4);
+        loginStateMachine.registerObservers(this);
+        if (this.loginStateMachine.isAuthenticated()) {
+            Intent intent = new Intent(LoginActivity.this, GameListActivity.class);
+            startActivity(intent);
+            this.finish();
+        }
 
 
 
-//	    WebView wv = (WebView) findViewById(R.id.web);
-
-//	    wv.loadUrl("file:///android_asset/about.html");
-//	    wv.setFocusable(true);
-//	    wv.setFocusableInTouchMode(true);
-//        wv.requestFocus();
 
         mKeyboard = new Keyboard(this, R.xml.keyboard);
         mKeyboardView = (CustomKeyboardView) findViewById(R.id.keyboard_view);
         mKeyboardView.setKeyboard(mKeyboard);
         mKeyboardView
                 .setOnKeyboardActionListener(new BasicOnKeyboardActionListener(
-                        this) {
-                    @Override
-                    public void onKey(int primaryCode, int[] keyCodes) {
-                        super.onKey(primaryCode, keyCodes);
-
-                    }
-                });
+                        this));
         showKeyboardWithAnimation();
 	}
 
@@ -105,4 +100,43 @@ public class LoginActivity extends Activity {
             mKeyboardView.showWithAnimation(animation);
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.d(TAG, "onKeyDown keyCode: " + keyCode);
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            this.loginStateMachine.validPin();
+        } else if (keyCode == KeyEvent.KEYCODE_DEL) {
+            this.loginStateMachine.backspace();
+        } else {
+            this.loginStateMachine.number(String.valueOf(keyCode - KeyEvent.KEYCODE_0));
+        }
+
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Log.d(TAG, "keyCode: " + keyCode);
+//        if (keyCode == 3) {
+//            return true;
+//        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+    public void update() {
+        if(this.loginStateMachine.isAuthenticated()) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Intent intent = new Intent(LoginActivity.this, GameListActivity.class);
+            startActivity(intent);
+            this.finish();
+        }
+    }
+
+
 }

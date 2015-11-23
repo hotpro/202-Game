@@ -24,6 +24,7 @@
     android:background="@color/white"
     android:backgroundTint="@color/gray">
     <LinearLayout
+        android:id="@+id/pinTextViews"
         android:layout_width="match_parent"
         android:layout_height="124dp"
         android:orientation="horizontal"
@@ -33,7 +34,7 @@
             android:layout_width="64dp"
             android:layout_height="90dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="*"
+            android:text=""
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50dp"
@@ -46,7 +47,7 @@
             android:layout_width="64dp"
             android:layout_height="90dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="*"
+            android:text=""
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50dp"
@@ -59,7 +60,7 @@
             android:layout_width="64dp"
             android:layout_height="90dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="*"
+            android:text=""
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50dp"
@@ -72,7 +73,7 @@
             android:layout_width="64dp"
             android:layout_height="90dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="*"
+            android:text=""
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="50dp"
@@ -86,12 +87,7 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_button_txt"
-        />
+
 
     <it.anddev.tutorial.CustomKeyboardView
         android:id="@+id/keyboard_view" android:visibility="gone"
@@ -102,4 +98,4 @@
 
 
 </LinearLayout>
-<!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/layout/login.xml -->
+<!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/layout/login.xml -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="prefs_theme_names">
     <item>Default</item>
@@ -14,25 +14,25 @@
     <item>rustworn</item>
     <item>truckin</item>
 </string-array>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="black">#000</color>
     <color name="gray">#d7d5d5</color>
     <color name="white">#FFF</color>
     <color name="yellow">#FFF0</color>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="item_margin">2dp</dimen>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <drawable name="black">#000</drawable>
     <drawable name="transp_black">#80000000</drawable>
     <drawable name="transp_grey">#80808080</drawable>
     <drawable name="white">#FFF</drawable>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/ids.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/ids.xml -->
     <eat-comment/>
     <item name="new_game" type="id"/>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="about">About...</string>
     <string name="about_title">About Asqare</string>
@@ -44,10 +44,10 @@
     <string name="delete_no">No</string>
     <string name="delete_title">Delete Game?</string>
     <string name="delete_yes">Yes</string>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/build/intermediates/exploded-aar/asqare/keyboardWidgetTutorial/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/exploded-aar/202-Game/keyboardWidgetTutorial/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="hello">Hello World, KeyboardWidgetTutorialActivity!</string>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="list_title">Game List</string>
     <string name="login">Login</string>
@@ -62,7 +62,7 @@
     <string name="title_bijoux">Bijoux</string>
     <string name="title_bouchebee">Bouche Bée</string>
     <string name="welcome">Welcome to Asqare!</string>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="TextGameItem" parent="@android:style/TextAppearance.Large">
         <item name="android:textStyle">bold</item>

@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Michaelzhd/Downloads/asqare/app/build/intermediates/exploded-aar/asqare/keyboardWidgetTutorial/unspecified/jars/classes.jar"
+        jar="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/exploded-aar/202-Game/keyboardWidgetTutorial/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="7b88c4abe7098b92d58ae1cd64d6a78f9014b173">
-        <dex dex="/Users/Michaelzhd/Downloads/asqare/app/build/intermediates/pre-dexed/debug/classes-049922790b30dc0119e836a30be8b477c0c7ae5a.jar" />
+        sha1="d2a3943201c78c4d73a751c819fb7ccf09019020">
+        <dex dex="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/pre-dexed/debug/classes-90bb37c69403f14dfb125cf6aca7a9581dffb738.jar" />
     </item>
 
 </items>

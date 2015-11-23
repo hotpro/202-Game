@@ -6,6 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.alfray.asqare"
+        minSdkVersion 21
+        targetSdkVersion 21
     }
 
     buildTypes {
@@ -14,4 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
+    compile project(':keyboardWidgetTutorial')
 }

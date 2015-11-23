@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/Michaelzhd/Downloads/asqare/keyboardWidgetTutorial/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/keyboardWidgetTutorial/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">KeyboardWidgetTutorial</string>
     <string name="hello">Hello World, KeyboardWidgetTutorialActivity!</string>

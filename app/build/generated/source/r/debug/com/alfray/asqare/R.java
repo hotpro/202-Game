@@ -80,17 +80,17 @@ public final class R {
         public static final int gameplay=0x7f090004;
         public static final int image=0x7f090003;
         public static final int keyboard_view=0x7f09000f;
-        public static final int login_button=0x7f09000e;
         public static final int modified=0x7f090006;
         public static final int new_game=0x7f090000;
+        public static final int pinTextViews=0x7f09000a;
         public static final int score=0x7f090005;
         public static final int status=0x7f090009;
         public static final int surface=0x7f090007;
         public static final int target=0x7f090012;
-        public static final int textView1=0x7f09000a;
-        public static final int textView2=0x7f09000b;
-        public static final int textView3=0x7f09000c;
-        public static final int textView4=0x7f09000d;
+        public static final int textView1=0x7f09000b;
+        public static final int textView2=0x7f09000c;
+        public static final int textView3=0x7f09000d;
+        public static final int textView4=0x7f09000e;
         public static final int web=0x7f090001;
     }
     public static final class layout {

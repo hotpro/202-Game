@@ -37,4 +37,8 @@
     <string name="new_title">Create New Game?</string>
     <string name="title_bijoux">Bijoux</string>
     <string name="title_bouchebee">Bouche Bée</string>
+    <string name="login">Login</string>
+    <string name="login_button_txt">Login</string>
+    <string name="simple_ime">Simple IME</string>
+    <string name="subtype_en_US">English (US)</string>
 </resources>
