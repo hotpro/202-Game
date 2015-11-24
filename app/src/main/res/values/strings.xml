@@ -39,4 +39,8 @@
     <string name="title_bouchebee">Bouche Bée</string>
     <!-- ivan -->
     <string name="bonus_time">Bonus time...</string>
+    <string name="login">Login</string>
+    <string name="login_button_txt">Login</string>
+    <string name="simple_ime">Simple IME</string>
+    <string name="subtype_en_US">English (US)</string>
 </resources>

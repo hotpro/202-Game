@@ -70,6 +70,8 @@ public class BoucheBee extends Gameplay {
 	private Board<Board.Cell> mBoard;
 	private int mBx;
 	private int mBy;
+	private int mScore;
+	private int mMoves;
 	private int[] mTempStack;
 	private boolean mUseAnims;
 	private Board.Cell[] mSelectedCells;
@@ -308,13 +310,11 @@ public class BoucheBee extends Gameplay {
 
 	//-----------------------------------------------
 
-//	@Override
-//	protected void updateMessage() {
-//        super.updateMessage();
-//		String msg = String.format("Bouche Bée - Moves: %d, Score: %d, Ratio: %.2f",
-//				mMoves, mScore, (float)mScore / (float)mMoves);
-//		getContext().setStatus(msg);
-//	}
+	private void updateMessage() {
+		String msg = String.format("Bouche Bée - Moves: %d, Score: %d, Ratio: %.2f",
+				mMoves, mScore, (float)mScore / (float)mMoves);
+		getContext().setStatus(msg);
+	}
 
 	private void setup() {
 		updateMessage();
@@ -490,13 +490,9 @@ public class BoucheBee extends Gameplay {
 
 		if (num_changed != 0) {
 			// increase score
-//			for(; num_changed > 0; num_changed--) {
-//				mScore += num_changed;
-//			}
-
-            // BB calculation Strategy Yunlong Xu
-            scoreCalculator = new BoucheBeeCalculation();
-            mScore = scoreCalculator.scoreCalculation(mScore, num_changed);
+			for(; num_changed > 0; num_changed--) {
+				mScore += num_changed;
+			}
 			mMoves++;
 
 			updateMessage();

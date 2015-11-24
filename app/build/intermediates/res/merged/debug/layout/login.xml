@@ -1,0 +1,101 @@
+<!--
+ * Project: Asqare
+ * Copyright (C) 2008-2012 rdrr.labs@gmail.com,
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@color/white"
+    android:backgroundTint="@color/gray">
+    <LinearLayout
+        android:id="@+id/pinTextViews"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.09">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="90dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/textView1" />
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="90dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/textView2" />
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="90dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="90dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/textView4" />
+
+
+
+
+    </LinearLayout>
+
+
+
+    <it.anddev.tutorial.CustomKeyboardView
+        android:id="@+id/keyboard_view" android:visibility="gone"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"></it.anddev.tutorial.CustomKeyboardView>
+
+
+
+
+</LinearLayout>
+<!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/layout/login.xml -->

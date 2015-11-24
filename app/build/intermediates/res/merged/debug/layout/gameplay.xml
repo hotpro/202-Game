@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Project: Asqare
+ * Copyright (C) 2008-2012 rdrr.labs@gmail.com,
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:orientation="vertical"
+	>
+
+	<com.alfray.asqare.view.AsqareView
+		android:id="@+id/surface"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	   	android:focusable="true"
+	   	android:focusableInTouchMode="true"
+	    android:layout_weight="1"
+	    />
+
+	<TextView
+	    android:id="@+id/status"
+	    android:paddingLeft="2dip"
+	    android:layout_weight="0"
+	    android:background="@drawable/black"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:lines="1"
+	    android:gravity="center_vertical|center_horizontal"
+	    />
+
+</LinearLayout>
+
+<!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/src/main/res/layout/gameplay.xml -->

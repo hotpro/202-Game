@@ -79,6 +79,8 @@ public class Bijoux extends Gameplay {
 	private Random mRandom;
 	private Cell mFirstCell;
 	private Cell mSecondCell;
+	private int mMoves;
+	private int mScore;
 	private int[] mTempStack;
 	private long mFillChanged;
 	private boolean mApplyMovePenalty;
@@ -417,13 +419,11 @@ public class Bijoux extends Gameplay {
 		mAnimThread.queueGameplayEvent(this, mSetupEvent);
 	}
 
-//    @Override
-//	protected void updateMessage() {
-//        super.updateMessage();
-//		String msg = String.format("Bijoux - Moves: %d, Score: %d, Ratio: %.2f",
-//				mMoves, mScore, (float)mScore / (float)mMoves);
-//		getContext().setStatus(msg);
-//	}
+	private void updateMessage() {
+		String msg = String.format("Bijoux - Moves: %d, Score: %d, Ratio: %.2f",
+				mMoves, mScore, (float)mScore / (float)mMoves);
+		getContext().setStatus(msg);
+	}
 
 	//-----------------
 
@@ -733,6 +733,10 @@ public class Bijoux extends Gameplay {
                     mScore = scoreCalculator.scoreCalculation(mScore,++count);
 
                 }
+			int count = 0;
+			long temp = changed;
+			while (temp != 0) {
+				if ((temp & 1) != 0) mScore += ++count;
 				temp = temp >> 1;
 			}
 			updateMessage();
@@ -742,12 +746,8 @@ public class Bijoux extends Gameplay {
 			if (mUseAnims) mAnimThread.queueDelayFor(250 /* ms */);
 			mAnimThread.queueGameplayEvent(this, EVENT_FILL);
 		} else {
-            scoreCalculator = new PenaltyCalculation();
 			if (mApplyMovePenalty) {
-
-                // BJ Penalty Strategy Yunlong Xu
-//				mScore -= (mScore * MOVE_PENALTY) / 100;
-                mScore = scoreCalculator.scoreCalculation(mScore, MOVE_PENALTY);
+				mScore -= (mScore * MOVE_PENALTY) / 100;
 				updateMessage();
 			}
 			mAnimThread.queueGameplayEvent(this, EVENT_DONE);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/exploded-aar/202-Game/keyboardWidgetTutorial/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="d2a3943201c78c4d73a751c819fb7ccf09019020">
+        <dex dex="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/pre-dexed/debug/classes-90bb37c69403f14dfb125cf6aca7a9581dffb738.jar" />
+    </item>
+
+</items>

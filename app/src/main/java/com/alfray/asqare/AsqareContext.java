@@ -42,7 +42,6 @@ import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.CellRegion;
 import com.alfray.asqare.engine.Board.Cell;
 import com.alfray.asqare.gameplay.Gameplay;
-import com.alfray.asqare.gameplay.Observer;
 import com.alfray.asqare.prefs.PrefsValues;
 import com.alfray.asqare.view.AsqareView;
 
@@ -203,7 +202,6 @@ public class AsqareContext {
 
 		//**ivan e
 		mGameplay.create(state);
-        mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
 
