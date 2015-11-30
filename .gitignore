@@ -1,9 +1,11 @@
 # Gradle files
-.gradle/
+.gradle
 build/
+keyboardWidgetTutorial/build
+app/build
 
 # Local configuration file (sdk path, etc)
 local.properties
 
 *.iml
-.idea/
+.idea
