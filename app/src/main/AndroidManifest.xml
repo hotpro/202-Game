@@ -32,7 +32,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".gameplay.GameplayActivity">
+        <activity android:name=".gameplay.GameplayActivity"
+            >
 			<intent-filter>
 			     <action android:name="android.intent.action.INSERT" />
 			     <category android:name="android.intent.category.DEFAULT" />

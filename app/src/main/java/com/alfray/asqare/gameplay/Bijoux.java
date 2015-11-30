@@ -378,12 +378,6 @@ public class Bijoux extends Gameplay {
 		createSprites(prefs.getVisualTheme(), true /*preserveState*/);
 	}
 
-    @Override
-	public String getScoreSummary() {
-		String msg = String.format("%d/%d", mMoves, mScore);
-		return msg;
-	}
-
 	@Override
 	public Bitmap createPreview(String state, int width, int height) {
 		create(state);

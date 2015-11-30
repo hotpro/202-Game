@@ -25,9 +25,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.alfray.asqare.AsqareActivity;
 import com.alfray.asqare.AsqareContext;
 import com.alfray.asqare.R;
@@ -46,8 +50,9 @@ public class GameplayActivity extends AsqareActivity {
 	private int mColState = -1;
 	private int mColScore = -1;
 	private int mColModified = -1;
+    private ProgressBar progress;
 
-	@Override
+    @Override
 	public void onCreate(Bundle inState) {
 
     	Log.v(TAG, this.getClass().getSimpleName() + "/" +
@@ -99,20 +104,44 @@ public class GameplayActivity extends AsqareActivity {
     private GameCountDown gameCountDown;
     private TextView countDownView;
 	private void setupTimer() {
+        int count = 60;
+        this.progress = (ProgressBar) findViewById(R.id.progress);
+        this.progress.setMax(count);
+
         this.countDownView = (TextView) findViewById(R.id.count_down);
-        this.gameCountDown = new DefaultGameCountDown(10);
+        this.gameCountDown = new DefaultGameCountDown(count);
         this.gameCountDown.register(new GameCountDownListener() {
             @Override
             public void onTick(long second) {
-                countDownView.setText(second + " s");
+				progress.incrementProgressBy(1);
+                countDownView.setText("Remaining: " + second + " s");
             }
 
             @Override
             public void onFinish() {
-                finish();
+                countDownView.setText("Remaining: 0 s");
+                progress.incrementProgressBy(1);
+                showResult();
+//                finish();
             }
         });
         this.gameCountDown.start();
+    }
+
+    private void showResult() {
+        new MaterialDialog.Builder(this)
+                .title("Good Game")
+                .content("Score is: " + getContext().getGameplay().getScore() + "\nTotal Move: "
+                        + getContext().getGameplay().getMoves())
+                .positiveText("OK")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        finish();
+                    }
+                })
+                .cancelable(false)
+                .show();
     }
 
 	@Override

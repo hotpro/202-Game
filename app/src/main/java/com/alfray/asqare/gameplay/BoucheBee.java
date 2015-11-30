@@ -145,12 +145,6 @@ public class BoucheBee extends Gameplay {
 	}
 
 	@Override
-	public String getScoreSummary() {
-		String msg = String.format("%d/%d", mMoves, mScore);
-		return msg;
-	}
-
-	@Override
 	public void onPrefsUpdated(PrefsValues prefs) {
 		mUseAnims = prefs.playAnims();
 	}

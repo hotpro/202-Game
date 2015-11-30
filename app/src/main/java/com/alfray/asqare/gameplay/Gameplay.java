@@ -72,9 +72,20 @@ public abstract class Gameplay implements IUiEventListener, Subject {
 	 * Returns a consise summary of the current gameplay score.
 	 * This will be displayed in the game list.
 	 */
-	public abstract String getScoreSummary();
+	public String getScoreSummary() {
+		String msg = String.format("%d/%d", mMoves, mScore);
+		return msg;
+	}
 
-	//--------------------------
+    public int getMoves() {
+        return mMoves;
+    }
+
+    public int getScore() {
+        return mScore;
+    }
+
+    //--------------------------
 
 	/**
 	 * Called to recreate a gameplay from a previously saved state.
