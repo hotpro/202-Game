@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ivanybma/Documents/android_studio_workspace/202_group/app/build/intermediates/exploded-aar/202_group/keyboardWidgetTutorial/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="7215165fd3bccdcba9df404e429167ca4c547bd7">
+        <dex dex="/Users/ivanybma/Documents/android_studio_workspace/202_group/app/build/intermediates/pre-dexed/debug/classes-56ddad969183dd3632e858b3c5ab06f780f8cc14.jar" />
+    </item>
+
+</items>

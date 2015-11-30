@@ -258,7 +258,7 @@ public class AsqareContext {
 		d.setIcon(R.drawable.flowers_orange);
 
 		int reply;
-		String[] items = new String[]{"A. Double point in 10sec","B. pending....."};
+		String[] items = new String[]{"A. Double point in 10sec","B. Direct 30 extra points"};
 
 		d.setItems(items, new DialogInterface.OnClickListener() {
 			@Override

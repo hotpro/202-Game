@@ -411,9 +411,7 @@ public class Bijoux extends Gameplay {
 		mAnimThread.queueGameplayEvent(this, mSetupEvent);
 	}
 
-//    @Override
-//	protected void updateMessage() {
-//        super.updateMessage();
+//	private void updateMessage() {
 //		String msg = String.format("Bijoux - Moves: %d, Score: %d, Ratio: %.2f",
 //				mMoves, mScore, (float)mScore / (float)mMoves);
 //		getContext().setStatus(msg);
