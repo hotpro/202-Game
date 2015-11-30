@@ -42,6 +42,7 @@ import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.CellRegion;
 import com.alfray.asqare.engine.Board.Cell;
 import com.alfray.asqare.gameplay.Gameplay;
+import com.alfray.asqare.gameplay.Observer;
 import com.alfray.asqare.prefs.PrefsValues;
 import com.alfray.asqare.view.AsqareView;
 
@@ -202,6 +203,7 @@ public class AsqareContext {
 
 		//**ivan e
 		mGameplay.create(state);
+        mGameplay.register(scoreObserver);
 		return mGameplay;
 	}
 
@@ -256,7 +258,7 @@ public class AsqareContext {
 		d.setIcon(R.drawable.flowers_orange);
 
 		int reply;
-		String[] items = new String[]{"A. Double point in 10sec","B. pending....."};
+		String[] items = new String[]{"A. Double point in 10sec","B. Direct 30 extra points"};
 
 		d.setItems(items, new DialogInterface.OnClickListener() {
 			@Override

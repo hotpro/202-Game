@@ -16,4 +16,4 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 	<translate android:fromYDelta="-50%p" android:toYDelta="0" android:duration="200"/>
 	<alpha android:fromAlpha="0.0" android:toAlpha="1.0" android:duration="200" />
-</set><!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/keyboardWidgetTutorial/src/main/res/anim/slide_in_bottom.xml --><!-- From: file:/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/exploded-aar/202-Game/keyboardWidgetTutorial/unspecified/res/anim/slide_in_bottom.xml -->
+</set><!-- From: file:/Users/ivanybma/Documents/android_studio_workspace/202_group/keyboardWidgetTutorial/src/main/res/anim/slide_in_bottom.xml --><!-- From: file:/Users/ivanybma/Documents/android_studio_workspace/202_group/app/build/intermediates/exploded-aar/202_group/keyboardWidgetTutorial/unspecified/res/anim/slide_in_bottom.xml -->

@@ -26,7 +26,7 @@ public final class R {
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0a0002;
-		public static final int hello = 0x7f0a000a;
+		public static final int hello = 0x7f0a000b;
 	}
 	public static final class xml {
 		public static final int keyboard = 0x7f050000;

@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/exploded-aar/202-Game/keyboardWidgetTutorial/unspecified/jars/classes.jar"
+        jar="/Users/ivanybma/Documents/android_studio_workspace/202_group/app/build/intermediates/exploded-aar/202_group/keyboardWidgetTutorial/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="d2a3943201c78c4d73a751c819fb7ccf09019020">
-        <dex dex="/Users/Michaelzhd/CMPE202/team/202-Game/app/build/intermediates/pre-dexed/debug/classes-90bb37c69403f14dfb125cf6aca7a9581dffb738.jar" />
+        sha1="7215165fd3bccdcba9df404e429167ca4c547bd7">
+        <dex dex="/Users/ivanybma/Documents/android_studio_workspace/202_group/app/build/intermediates/pre-dexed/debug/classes-56ddad969183dd3632e858b3c5ab06f780f8cc14.jar" />
     </item>
 
 </items>
