@@ -46,6 +46,7 @@ import com.alfray.asqare.AsqareActivity;
 import com.alfray.asqare.AsqareContext;
 import com.alfray.asqare.R;
 import com.alfray.asqare.gameplay.AvailableGameplays;
+import com.alfray.asqare.gameplay.Bijoux;
 import com.alfray.asqare.gameplay.Gameplay;
 import com.alfray.asqare.gameplay.Title;
 
@@ -336,7 +337,9 @@ public class GameListActivity extends AsqareActivity {
     		if (view instanceof TextView && view.getId() == R.id.gameplay) {
 				String clazz = cursor.getString(columnIndex); // Columns.GAMEPLAY
 				clazz = formatGameplay(clazz);
-    			((TextView) view).setText(clazz);
+				String name = clazz.equals(Bijoux.class.getSimpleName()) ? getResources().getString(R.string.title_bijoux)
+						: getResources().getString(R.string.title_bouchebee);
+    			((TextView) view).setText(name);
     			return true;
     		}
 

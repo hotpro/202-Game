@@ -43,7 +43,7 @@ import com.alfray.asqare.view.AsqareView.drawBoard;
 
 public class BoucheBee extends Gameplay {
 
-	private static final String TAG = "Asqare.BoucheBee";
+	private static final String TAG = "Asqare.Mode2";
     private static final int SERIAL_ID = 1;
 
     /** Event to call doSetup, which fills the initial board randomly. */
