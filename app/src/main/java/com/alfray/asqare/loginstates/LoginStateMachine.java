@@ -1,6 +1,8 @@
 package com.alfray.asqare.loginstates;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,9 +12,9 @@ import java.util.Objects;
 /**
  * Created by Michaelzhd on 11/19/15.
  */
-public class LoginStateMachine implements ILoginStateMachine, ISubject {
+public class LoginStateMachine extends Activity implements ILoginStateMachine, ISubject {
 
-    private String pin = "";
+    private String pin;
     private boolean authenticated = false;
     private int pinCount = 0;
     private LoginStateNoPin pin0;
@@ -25,11 +27,13 @@ public class LoginStateMachine implements ILoginStateMachine, ISubject {
     private TextView pinView3;
     private TextView pinView4;
 
+    private Context context;
+
     private ILoginState state;
     private String digit1,digit2,digit3,digit4;
 
     private ArrayList<Myobserver> observers;
-    public LoginStateMachine(TextView pinView1,TextView pinView2,TextView pinView3,TextView pinView4 ) {
+    public LoginStateMachine(TextView pinView1,TextView pinView2,TextView pinView3,TextView pinView4, Context context ) {
         pin0 = new LoginStateNoPin(this);
         pin1 = new LoginStateOnePin(this);
         pin2 = new LoginStateTwoPin(this);
@@ -41,7 +45,13 @@ public class LoginStateMachine implements ILoginStateMachine, ISubject {
         this.pinView2 = pinView2;
         this.pinView3 = pinView3;
         this.pinView4 = pinView4;
+
+        this.context = context;
         this.observers = new ArrayList<Myobserver>();
+//        context = getApplicationContext();
+        SharedPreferences prefs = context.getSharedPreferences("login", MODE_PRIVATE);
+
+        this.pin = prefs.getString("pw","");
 
     }
 
@@ -132,6 +142,13 @@ public class LoginStateMachine implements ILoginStateMachine, ISubject {
             String inputPin = digit1 + digit2 + digit3 + digit4;
             if ("".equals(pin) || pin == null) {
                 this.pin = inputPin;
+
+//                context.getSharedPreferences("login",Context.MODE_PRIVATE);
+//                getPreferences(Context.MODE_PRIVATE).edit().putString("pw", inputPin).commit();
+                SharedPreferences.Editor editor = context.getSharedPreferences("login", MODE_PRIVATE).edit();
+                editor.putString("pw", inputPin);
+                editor.commit();
+
                 this.setStateNoPinDigits();
 
             } else if (pin.equals(inputPin)) {

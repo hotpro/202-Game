@@ -19,6 +19,7 @@
 package com.alfray.asqare;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -51,6 +52,7 @@ public class LoginActivity extends Activity implements Myobserver {
     private ILoginStateMachine loginStateMachine;
 //    private LinearLayout pinTextViews;
 
+    private Context mContext;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -60,12 +62,13 @@ public class LoginActivity extends Activity implements Myobserver {
 	    setContentView(R.layout.login);
 	    setTitle(R.string.login);
 
+        mContext = this;
 
         TextView pinView1 = (TextView)findViewById(R.id.textView1);
         TextView pinView2 = (TextView)findViewById(R.id.textView2);
         TextView pinView3 = (TextView)findViewById(R.id.textView3);
         TextView pinView4 = (TextView)findViewById(R.id.textView4);
-        loginStateMachine = new LoginStateMachine(pinView1,pinView2,pinView3,pinView4);
+        loginStateMachine = new LoginStateMachine(pinView1,pinView2,pinView3,pinView4, mContext);
         loginStateMachine.registerObservers(this);
         if (this.loginStateMachine.isAuthenticated()) {
             Intent intent = new Intent(LoginActivity.this, GameListActivity.class);
