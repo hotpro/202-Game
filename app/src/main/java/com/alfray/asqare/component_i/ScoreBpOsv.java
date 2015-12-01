@@ -13,7 +13,7 @@ public class ScoreBpOsv implements Observer {
     public static int lst_bonus_score=0;
     private Handler parenthandler;
     private AsqareContext destcontext;
-    public static Integer tier=70;
+    public static Integer tier=40;
 
     public ScoreBpOsv(Handler parenthandler,AsqareContext destcontext){
 

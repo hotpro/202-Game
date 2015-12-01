@@ -30,6 +30,7 @@ import com.alfray.asqare.AsqareContext;
 import com.alfray.asqare.R;
 import com.alfray.asqare.component_i.ConBijouxCalculation;
 import com.alfray.asqare.component_i.ConcreteScoreCalculator;
+import com.alfray.asqare.component_i.ScoreBpOsv;
 import com.alfray.asqare.engine.AnimThread;
 import com.alfray.asqare.engine.Board;
 import com.alfray.asqare.engine.Color;
@@ -108,7 +109,7 @@ public class Bijoux extends Gameplay {
 		if (state != null &&
 				state.length() > 0 &&
 				restoreState(state)) {
-			updateMessage();
+//			updateMessage();
 			mSetupEvent = EVENT_CHECK;
 		} else {
 			mSetupEvent = EVENT_SETUP;
@@ -324,7 +325,8 @@ public class Bijoux extends Gameplay {
 		mStopped = false;
 
 		mAnimThread.start();
-
+		//**ivan
+		ScoreBpOsv.lst_bonus_score=0;
 		if (mBoard == null) {
 			mSelectX = -1;
 			mSelectY = -1;
@@ -403,7 +405,7 @@ public class Bijoux extends Gameplay {
 	//-----------------
 
 	private void setup() {
-		updateMessage();
+//		updateMessage();
 
         onCursorMoved(mBx / 2, mBy / 2);
         getContext().invalidateAll();
