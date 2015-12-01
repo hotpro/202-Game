@@ -8,6 +8,8 @@ package com.alfray.asqare.timer;
 public interface GameCountDown {
     public void start();
 
+    public void cancel();
+
     public void register(GameCountDownListener listener);
 
     public void unregister(GameCountDownListener listener);

@@ -29,6 +29,11 @@ public class DefaultGameCountDown implements GameCountDown {
     }
 
     @Override
+    public void cancel() {
+        countDownTimer.cancel();
+    }
+
+    @Override
     public void register(GameCountDownListener listener) {
         this.listener = listener;
     }

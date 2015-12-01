@@ -125,7 +125,6 @@ public class GameplayActivity extends AsqareActivity {
 //                finish();
             }
         });
-        this.gameCountDown.start();
     }
 
     private void showResult() {
@@ -189,6 +188,12 @@ public class GameplayActivity extends AsqareActivity {
 		if (mColState == -1) mColState = mCursor.getColumnIndexOrThrow(Columns.STATE);
 		if (mColScore == -1) mColScore = mCursor.getColumnIndexOrThrow(Columns.SCORE);
 		if (mColModified == -1) mColModified = mCursor.getColumnIndexOrThrow(Columns.MODIFIED_MS);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		this.gameCountDown.cancel();
 	}
 }
 
