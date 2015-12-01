@@ -125,6 +125,7 @@ public class GameplayActivity extends AsqareActivity {
 //                finish();
             }
         });
+		this.gameCountDown.start();
     }
 
     private void showResult() {
