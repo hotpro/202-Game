@@ -22,7 +22,7 @@
     android:layout_height="fill_parent"
 	android:orientation="horizontal"
 >
-	<com.alfray.asqare.view.AsqareView
+	<edu.sjsu.cmpe202.view.AsqareView
 		android:id="@+id/surface"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"

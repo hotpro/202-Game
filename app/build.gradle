@@ -9,7 +9,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.alfray.asqare"
+        applicationId "edu.sjsu.cmpe202"
         minSdkVersion 15
         targetSdkVersion 21
     }
